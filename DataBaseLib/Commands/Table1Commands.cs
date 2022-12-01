@@ -40,12 +40,8 @@ namespace DataBaseLib.Commands
 
         public void Delete(string[] args)
         {
-            // дома
-
-            /*
-             string query = $"DELETE FROM [Категории] " +
-                    $"WHERE [ID] = {id}";
-             */
+            string query = $"DELETE FROM [Клиент] " + $"WHERE [Код] = {args[0]}";
+            controller.ExecuteCommand(query);
         }
 
 

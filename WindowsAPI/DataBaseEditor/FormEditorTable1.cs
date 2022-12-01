@@ -17,8 +17,7 @@ namespace WindowsFormsApp1.DataBaseEditor
         {
             InitializeComponent();
         }
-
-        string _tableName = "R1";
+        string _tableName = "Клиент";
 
         private void Table1_Load(object sender, EventArgs e)
         {
@@ -28,18 +27,29 @@ namespace WindowsFormsApp1.DataBaseEditor
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
-            string[] args = new string[3];
-            args[0] = textBox1.Text;
-            args[1] = textBox2.Text;
-            args[2] = textBox3.Text;
+            string[] args = new string[4];
+            args[0] = textBox2.Text;
+            args[1] = textBox3.Text;
+            args[2] = textBox4.Text;
+            args[3] = textBox1.Text;
+
 
             DataBaseCommadsManager manager = new DataBaseCommadsManager();
             manager.Insert(args, _tableName);
+            manager.GetDataTable(_tableName);
+            dataGridView1.DataSource = manager.GetDataTable(_tableName);
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            // дома
+
+            int currentRow = dataGridView1.CurrentCell.RowIndex;
+            string[] args = new string[1];
+            args[0] = dataGridView1[0, currentRow].Value.ToString();
+
+            DataBaseCommadsManager manager = new DataBaseCommadsManager();
+            manager.Delete(args, _tableName);
+            dataGridView1.DataSource = manager.GetDataTable(_tableName);
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)

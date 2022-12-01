@@ -29,6 +29,19 @@ public class DataBaseCommadsManager
         command.Insert(args);
     }
 
+    public void Delete(string[] args, string tableName)
+    {
+        ITableEditorCommand command;
+        switch (tableName)
+        {
+            case "Клиент":
+                command = new Table1Commands();
+                break;
+            default: throw new Exception("Ошибка!");
+        }
+        command.Delete(args);
+    }
+
     // Домашнее задание
     // 1. Дописать логику методов Update, Delete
     // 2. Продумать структуру БД по вариантам
