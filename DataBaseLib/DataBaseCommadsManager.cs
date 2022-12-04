@@ -22,7 +22,7 @@ public class DataBaseCommadsManager
         ITableEditorCommand command;
         switch(tableName)
         {
-            case "R1": command = new Table1Commands();
+            case "Приемы": command = new Table1Commands();
                 break;
             default: throw new Exception("Ошибка!");
         }        
@@ -34,7 +34,7 @@ public class DataBaseCommadsManager
         ITableEditorCommand command;
         switch (tableName)
         {
-            case "Клиент":
+            case "Пациент":
                 command = new Table1Commands();
                 break;
             default: throw new Exception("Ошибка!");

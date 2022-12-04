@@ -9,7 +9,7 @@ namespace DataBaseLib.Access;
 /// </summary>
 internal class AccessDataBaseController
 {
-    private string _connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=TextDataBase.accdb";
+    private string _connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source = Policlinika.accdb";
     
     /// <summary>
     /// Возвращает виртуальную таблицу по SQL-запросу из БД Access

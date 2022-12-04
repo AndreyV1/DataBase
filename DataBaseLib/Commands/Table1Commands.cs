@@ -21,9 +21,9 @@ namespace DataBaseLib.Commands
 
         public void Insert(string[] args)
         {            
-            string query = $"INSERT INTO [R1] " +
-                    $"([ФИО], [Специальность], [Возраст]) " +
-                    $"VALUES ('{args[0]}', '{args[1]}', {args[2]})";
+            string query = $"INSERT INTO [Приемы] " +
+                    $"([Код приема], [Пациент], [Врач], [Дата приема]) " +
+                    $"VALUES ('{args[0]}', '{args[1]}', '{args[2]}', '{args[3]}')";
             controller.ExecuteCommand(query);
         }
 
